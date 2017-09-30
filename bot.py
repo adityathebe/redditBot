@@ -2,11 +2,11 @@ import requests as request
 import praw, os
 
 reddit = praw.Reddit(
-    client_id = os.environ['CLIENT_ID'],
-    client_secret = os.environ['CLIENT_SECRET'],
     user_agent = 'u/botlimbu v1.0',
-    username= os.environ['USERNAME'],
-    password= os.environ['PASSWORD']
+    client_id = os.environ.CLIENT_ID,
+    client_secret = os.environ.CLIENT_SECRET,
+    username= os.environ.USERNAME,
+    password= os.environ.PASSWORD
 )
 
 VALID_DOMAINS = [ 
