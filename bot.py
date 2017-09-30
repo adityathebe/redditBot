@@ -3,10 +3,10 @@ import praw, os
 
 reddit = praw.Reddit(
     user_agent = 'u/botlimbu v1.0',
-    client_id = os.environ.CLIENT_ID,
-    client_secret = os.environ.CLIENT_SECRET,
-    username= os.environ.USERNAME,
-    password= os.environ.PASSWORD
+    client_id = os.environ['CLIENT_ID'],
+    client_secret = os.environ['CLIENT_SECRET'],
+    username= os.environ['USERNAME'],
+    password= os.environ['PASSWORD']
 )
 
 VALID_DOMAINS = [ 
@@ -19,8 +19,8 @@ subreddit = reddit.subreddit('soccer+reddevils+gunners')
 def replyLink(sub):
     STREAM_API = 'https://api.streamable.com/import?url=';
     reply = '###[Streamable Mirror](https://streamable.com/{})\n *** \n *I am a bot*'
-    user = os.environ.STREAM_USER
-    password = os.environ.STREAM_PASS
+    user = os.environ['STREAM_USER']
+    password = os.environ['STREAM_PASS']
 
     video_url = (STREAM_API+sub.url).strip()
     r = request.get(video_url, auth=(user, password) )
