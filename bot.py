@@ -14,7 +14,7 @@ VALID_DOMAINS = [
     'imgtc.com', 'imgtc.b-cdn.net', 'clippituser.tv'
 ];
 
-subreddit = reddit.subreddit('soccer+reddevils+gunners')
+subreddit = reddit.subreddit('gunners+soccer+MCFC+chelseafc+LiverpoolFC')
 
 def replyLink(sub):
     STREAM_API = 'https://api.streamable.com/import?url=';

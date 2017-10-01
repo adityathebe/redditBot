@@ -7,9 +7,13 @@ A **Reddit Bot** that provides Streamable mirror links on
 
 > r/gunners
 
-> r/reddevils
+> r/LiverpoolFC
 
-serving 100,000+ football fans ...
+> r/Chelseafc
+
+> r/MCFC
+
+*It's not on **r/reddevils** because they have their own bot*
 
 ##
 
