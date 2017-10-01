@@ -18,7 +18,7 @@ subreddit = reddit.subreddit('soccer+reddevils+gunners')
 
 def replyLink(sub):
     STREAM_API = 'https://api.streamable.com/import?url=';
-    reply = '###[Streamable Mirror](https://streamable.com/{})\n *** \n *I am a bot*'
+    reply = '###[Streamable Mirror](https://streamable.com/{})'
     user = os.environ['STREAM_USER']
     password = os.environ['STREAM_PASS']
 
