@@ -3,8 +3,6 @@
 
 A **Reddit Bot** that provides Streamable mirror links on 
 
-> r/Soccer
-
 > r/Gunners
 
 > r/LiverpoolFC

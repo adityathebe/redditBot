@@ -3,10 +3,10 @@ import praw, os
 
 reddit = praw.Reddit(
     user_agent = 'u/botlimbu v1.0',
-    client_id = os.environ['CLIENT_ID'],
-    client_secret = os.environ['CLIENT_SECRET'],
-    username= os.environ['USERNAME'],
-    password= os.environ['PASSWORD']
+    client_id = os.environ.get('CLIENT_ID'),
+    client_secret = os.environ.get('CLIENT_SECRET'),
+    username= os.environ.get('USERNAME'),
+    password= os.environ.get('PASSWORD')
 )
 
 VALID_DOMAINS = [ 
@@ -14,7 +14,7 @@ VALID_DOMAINS = [
     'imgtc.com', 'imgtc.b-cdn.net', 'clippituser.tv'
 ];
 
-subreddit = reddit.subreddit('gunners+MCFC+chelseafc+LiverpoolFC')
+subreddit = reddit.subreddit('gunners+MCFC+chelseafc+LiverpoolFC+videos')
 
 def replyLink(sub):
     STREAM_API = 'https://api.streamable.com/import?url=';
