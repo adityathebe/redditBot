@@ -11,7 +11,8 @@ reddit = praw.Reddit(
 
 VALID_DOMAINS = [ 
     'twitter.com', 'instagram.com', 'facebook.com', 
-    'imgtc.com', 'imgtc.b-cdn.net', 'clippituser.tv'
+    'imgtc.com', 'imgtc.b-cdn.net', 'clippituser.tv',
+    'botlimbu'
 ]
 
 subreddit = reddit.subreddit('gunners+MCFC+chelseafc+LiverpoolFC')
