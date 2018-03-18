@@ -36,8 +36,12 @@ def getStreams():
         if (count > 100):   # Exclude the first 100 previous submissions
             if sub.domain in VALID_DOMAINS:
                 data = replyLink(sub)
-                if(data != 'not-video'):
+                if (data != 'not-video'):
                     sub.reply(data)
                     print('{} . {}'.format(count, sub.title))
+                else:
+                    print('Not Video')
+            else:
+                print(sub.domain)
 
 getStreams()
