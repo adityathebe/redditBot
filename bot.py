@@ -11,11 +11,10 @@ reddit = praw.Reddit(
 
 VALID_DOMAINS = [ 
     'twitter.com', 'instagram.com', 'facebook.com', 
-    'imgtc.com', 'imgtc.b-cdn.net', 'clippituser.tv',
-    'botlimbu'
+    'imgtc.com', 'imgtc.b-cdn.net', 'clippituser.tv'
 ]
 
-subreddit = reddit.subreddit('gunners+MCFC+chelseafc+LiverpoolFC')
+subreddit = reddit.subreddit('gunners+MCFC+chelseafc+LiverpoolFC+botlimbu')
 
 def replyLink(sub):
     STREAM_API = 'https://api.streamable.com/import?url=';
