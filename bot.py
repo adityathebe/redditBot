@@ -3,10 +3,10 @@ import praw, os
 
 reddit = praw.Reddit(
     user_agent = 'u/botlimbu v1.0',
-    client_id = os.environ.get('CLIENT_ID'),
-    client_secret = os.environ.get('CLIENT_SECRET'),
     username= os.environ.get('USERNAME'),
-    password= os.environ.get('PASSWORD')
+    password= os.environ.get('PASSWORD'),
+    client_id = os.environ.get('CLIENT_ID'),
+    client_secret = os.environ.get('CLIENT_SECRET')
 )
 
 VALID_DOMAINS = [ 
@@ -14,7 +14,7 @@ VALID_DOMAINS = [
     'imgtc.com', 'imgtc.b-cdn.net', 'clippituser.tv'
 ]
 
-subreddit = reddit.subreddit('gunners+MCFC+chelseafc+LiverpoolFC+botlimbu')
+subreddit = reddit.subreddit('botlimbu+gunners+MCFC+chelseafc+LiverpoolFC')
 
 def replyLink(sub):
     STREAM_API = 'https://api.streamable.com/import?url=';
@@ -30,10 +30,11 @@ def replyLink(sub):
     return 'not-video'
 
 def getStreams():
+    print('Streaming new submissions ...')
     count = 0
     for sub in subreddit.stream.submissions():
         count += 1
-        if (count > 100):   # Exclude the first 100 previous submissions
+        if (count >= 100):   # Exclude the first 100 previous submissions
             if sub.domain in VALID_DOMAINS:
                 data = replyLink(sub)
                 if (data != 'not-video'):
