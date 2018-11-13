@@ -1,33 +1,36 @@
 import requests as request
-import praw, os
+import praw
+import os
 
 reddit = praw.Reddit(
-    user_agent = 'u/botlimbu v1.0',
-    username= os.environ.get('USERNAME'),
-    password= os.environ.get('PASSWORD'),
-    client_id = os.environ.get('CLIENT_ID'),
-    client_secret = os.environ.get('CLIENT_SECRET')
+    user_agent='u/botlimbu v1.0',
+    username=os.environ.get('USERNAME'),
+    password=os.environ.get('PASSWORD'),
+    client_id=os.environ.get('CLIENT_ID'),
+    client_secret=os.environ.get('CLIENT_SECRET')
 )
 
-VALID_DOMAINS = [ 
-    'twitter.com', 'instagram.com', 'facebook.com', 
+VALID_DOMAINS = [
+    'twitter.com', 'instagram.com', 'facebook.com',
     'imgtc.com', 'imgtc.b-cdn.net', 'clippituser.tv'
 ]
 
 subreddit = reddit.subreddit('botlimbu+gunners+MCFC+chelseafc+LiverpoolFC')
 
+
 def replyLink(sub):
-    STREAM_API = 'https://api.streamable.com/import?url=';
+    STREAM_API = 'https://api.streamable.com/import?url='
     reply = '###[Streamable Mirror](https://streamable.com/{})'
-    user = os.environ['STREAM_USER']
-    password = os.environ['STREAM_PASS']
+    user = os.environ.get('STREAM_USER')
+    password = os.environ.get('STREAM_PASS')
 
     video_url = (STREAM_API+sub.url).strip()
-    r = request.get(video_url, auth=(user, password) )
+    r = request.get(video_url, auth=(user, password))
     if(r.status_code == 200):
         shortcode = r.json()['shortcode']
         return reply.format(shortcode)
     return 'not-video'
+
 
 def getStreams():
     print('Streaming new submissions ...')
@@ -44,5 +47,6 @@ def getStreams():
                     print('Not Video')
             else:
                 print(sub.domain)
+
 
 getStreams()
