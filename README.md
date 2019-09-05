@@ -4,6 +4,18 @@ A Reddit Bot that replies with Streamable mirror links on `r/Gunners`
 
 ## Getting Started
 
+> Make sure to first create a `config.py` file and fill up the required details. Check `config-sample.py` for the required parameters.
+
+## Install with Docker
+
+```
+docker build -t reddit-streamable-bot .
+
+docker container run -d --name reddit-streamable-bot reddit-streamable-bot
+```
+
+## Intstall Without Docker
+
 ### 1. Install the python packages
 ```bash
 pip install -r requirements.txt
