@@ -6,6 +6,6 @@ REDDIT_CLIENT_ID = 'this_is_reddit_client_id'
 REDDIT_CLIENT_SECRET = 'this_is_reddit_client_secret'
 SUBREDDITS = 'videos+news'
 VALID_DOMAINS = [
-    'twitter.com', 'instagram.com', 'facebook.com',
+    'twitter.com', 'instagram.com', 'facebook.com', 'v.redd.it',
     'imgtc.com', 'imgtc.b-cdn.net', 'clippituser.tv'
 ]
