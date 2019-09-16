@@ -21,7 +21,7 @@ def replyLink(video_url):
     reply = '###[Streamable Mirror](https://streamable.com/{})'
     api_query_url = (STREAM_API+video_url).strip()
     r = request.get(api_query_url, auth=(STREAMABLE_USER, STREAMABLE_PASS))
-    if(r.status_code == 200):
+    if r.status_code == 200:
         shortcode = r.json()['shortcode']
         return reply.format(shortcode)
     return None
