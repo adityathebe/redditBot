@@ -1,9 +1,9 @@
-import os
 import praw
 import time
 import requests as request
 
-from config import REDDIT_PASSWORD, REDDIT_USERNAME, REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET
+from config import REDDIT_PASSWORD, REDDIT_USERNAME
+from config import REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET
 from config import STREAMABLE_USER, STREAMABLE_PASS
 from config import SUBREDDITS, VALID_DOMAINS
 
@@ -34,10 +34,11 @@ def getStreams():
         if sub.created_utc < start_time:
             continue  # Ignore old messages
 
-        print('\n\n{}\n- By {} on {}'.format(
+        print('\n\n{}\n- By {} on {}\n- ${}'.format(
             sub.title,
             sub.author,
-            sub.subreddit_name_prefixed
+            sub.subreddit_name_prefixed,
+            time.ctime()
         ))
 
         if sub.domain not in VALID_DOMAINS:
